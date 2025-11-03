@@ -108,4 +108,33 @@ public class Practice {
         countDiff = Math.abs(countDiff);
         return countDiff;
     }
+
+    /**
+     * Find the second-largest number (in HashMap values)
+     * 
+     * @param words a non-empty, non-null HashMap of integers
+     * @return the second-largest number in a HashMap
+     */
+    public static int secondLargest(HashMap<Integer, Integer> nums) {
+        int largest = 0;
+        int largest2 = 0;
+
+        for(int num : nums.values())
+        {
+            if(num > largest)
+            {
+                largest = num;
+            }
+        }
+
+        for(int num : nums.values())
+        {
+            if(num > largest2 && num != largest)
+            {
+                largest2 = num;
+            }
+        }
+        
+        return largest2;
+    }
 }
