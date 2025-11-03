@@ -81,4 +81,31 @@ public class Practice {
         }
         return count;
     }
+
+    /**
+     * Find the difference between how many odd and even numbers there are
+     * 
+     * @param nums a non-empty, non-null HashMap of integers
+     * @return the difference between how many odd and even numbers as an integer
+     */
+    public static int diffEvenOdd(HashMap<Integer, Integer> nums) {
+        int countEven = 0;
+        int countOdd = 0;
+
+        for(int num : nums.keySet())
+        {
+            if(num % 2 == 0)
+            {
+                countEven++;
+            }
+            else
+            {
+                countOdd++;
+            }
+        }
+        
+        int countDiff = countOdd - countEven;
+        countDiff = Math.abs(countDiff);
+        return countDiff;
+    }
 }
