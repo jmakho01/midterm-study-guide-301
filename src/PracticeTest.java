@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import static org.junit.Assert.*;
 
@@ -73,4 +74,42 @@ public class PracticeTest {
         String result = Practice.longestWord(theWords, 'd');
         assertEquals("", result);
     }
+
+    @Test
+    void testCountWordsInitial() {
+        HashSet<String> theWords = new HashSet<>();
+        theWords.add("car");
+        theWords.add("truck");
+        theWords.add("boat");
+        theWords.add("airplane");
+        theWords.add("tank");
+        int result = Practice.countWords(theWords, 5, 4);
+        assertEquals(2, result);
+    }
+
+    @Test
+    void testCountWordsZeroValues() {
+        HashSet<String> theWords = new HashSet<>();
+        theWords.add("car");
+        theWords.add("truck");
+        theWords.add("boat");
+        theWords.add("airplane");
+        theWords.add("tank");
+        int result = Practice.countWords(theWords, 0, 0);
+        assertEquals(5, result);
+    }
+
+    @Test
+    void testCountWordsOutOfBoundValues() {
+        HashSet<String> theWords = new HashSet<>();
+        theWords.add("car");
+        theWords.add("truck");
+        theWords.add("boat");
+        theWords.add("airplane");
+        theWords.add("tank");
+        int result = Practice.countWords(theWords, 8, 3);
+        assertEquals(0, result);
+    }
+
+    
 }
