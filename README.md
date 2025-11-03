@@ -32,7 +32,7 @@ Count how many words are longer than n characters and shorter than m characters 
 - The values of a HashMap
 - The keys of a HashMap
 
-Find the difference between the how many odd and even numbers there are in:
+Find the difference between how many odd and even numbers there are in:
 - An array
 - An ArrayList
 - A HashSet
