@@ -59,4 +59,26 @@ public class Practice {
         return theLong;
     }
 
+    /**
+     * Count how many words are longer than n characters and shorter than m characters
+     * 
+     * @param words a non-empty, non-null HashSet of Strings
+     * @return the total amount of words longer than n characters and shorter than m characters
+     */
+    public static int countWords(HashSet<String> words, int n, int m) {
+        int count = 0;
+
+        for(String word : words)
+        {
+            if(n < word.length())
+            {
+                count++;
+            }
+            if(word.length() < m)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 }
