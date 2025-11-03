@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 import org.junit.jupiter.api.Test;
@@ -40,7 +42,35 @@ public class PracticeTest {
     }
     
     // Make tests for each problem you solve
+    @Test
+    void testLongestWordInitial() {
+        ArrayList<String> theWords = new ArrayList<>();
+        theWords.add("Test1");
+        theWords.add("Test2");
+        theWords.add("Test333");
+        String result = Practice.longestWord(theWords, 'T');
+        assertEquals("Test333", result);
+    }
     
+    @Test
+    void testLongestWordMatchingLetter() {
+        ArrayList<String> theWords = new ArrayList<>();
+        theWords.add("car");
+        theWords.add("truck");
+        theWords.add("boat");
+        theWords.add("airplane");
+        String result = Practice.longestWord(theWords, 'a');
+        assertEquals("airplane", result);
+    }
+
+    @Test
+    void testLongestWordNonMatchingLetter() {
+        ArrayList<String> theWords = new ArrayList<>();
+        theWords.add("car");
+        theWords.add("truck");
+        theWords.add("boat");
+        theWords.add("airplane");
+        String result = Practice.longestWord(theWords, 'd');
+        assertEquals("", result);
+    }
 }
-
-
