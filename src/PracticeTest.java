@@ -147,4 +147,40 @@ public class PracticeTest {
         int result = Practice.diffEvenOdd(theNumbers);
         assertEquals(5, result);
     }
+
+    @Test
+    void testSecondLargestInitial() {
+        HashMap<Integer, Integer> theNumbers = new HashMap<>();
+        theNumbers.put(1, 3);
+        theNumbers.put(2, 4);
+        theNumbers.put(5, 7);
+        theNumbers.put(6, 8);
+        theNumbers.put(9, 0);
+        int result = Practice.secondLargest(theNumbers);
+        assertEquals(7, result);
+    }
+
+    @Test
+    void testSecondLargestRandom() {
+        HashMap<Integer, Integer> theNumbers = new HashMap<>();
+        theNumbers.put(2, 7);
+        theNumbers.put(4, 43);
+        theNumbers.put(6, 30);
+        theNumbers.put(8, 8);
+        theNumbers.put(0, 63);
+        int result = Practice.secondLargest(theNumbers);
+        assertEquals(43, result);
+    }
+
+    @Test
+    void testSecondLargestZero() {
+        HashMap<Integer, Integer> theNumbers = new HashMap<>();
+        theNumbers.put(1, 0);
+        theNumbers.put(2, 0);
+        theNumbers.put(3, 0);
+        theNumbers.put(4, 0);
+        theNumbers.put(5, 0);
+        int result = Practice.secondLargest(theNumbers);
+        assertEquals(0, result);
+    }
 }
