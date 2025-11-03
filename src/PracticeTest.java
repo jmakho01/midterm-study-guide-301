@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -111,5 +112,39 @@ public class PracticeTest {
         assertEquals(0, result);
     }
 
-    
+    @Test
+    void testDiffEvenOddInitial() {
+        HashMap<Integer, Integer> theNumbers = new HashMap<>();
+        theNumbers.put(1, 3);
+        theNumbers.put(2, 4);
+        theNumbers.put(5, 7);
+        theNumbers.put(6, 8);
+        theNumbers.put(9, 0);
+        int result = Practice.diffEvenOdd(theNumbers);
+        assertEquals(1, result);
+    }
+
+    @Test
+    void testDiffEvenOddAllEven() {
+        HashMap<Integer, Integer> theNumbers = new HashMap<>();
+        theNumbers.put(2, 1);
+        theNumbers.put(4, 3);
+        theNumbers.put(6, 5);
+        theNumbers.put(8, 7);
+        theNumbers.put(0, 9);
+        int result = Practice.diffEvenOdd(theNumbers);
+        assertEquals(5, result);
+    }
+
+    @Test
+    void testDiffEvenOddAllOdd() {
+        HashMap<Integer, Integer> theNumbers = new HashMap<>();
+        theNumbers.put(1, 2);
+        theNumbers.put(3, 4);
+        theNumbers.put(5, 6);
+        theNumbers.put(7, 8);
+        theNumbers.put(9, 0);
+        int result = Practice.diffEvenOdd(theNumbers);
+        assertEquals(5, result);
+    }
 }
